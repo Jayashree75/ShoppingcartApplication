@@ -1,0 +1,37 @@
+﻿@model IEnumerable<CommonLayer.ResponseModel.ProductResponseModel>
+
+@{
+  ViewBag.Title = "Display";
+}
+
+
+<h3>Product Page</h3>
+  <table border="1" class="table table-bordered table-responsive">
+    <thead>
+      <tr class="btn-primary">
+        <th>ProductName</th>
+        <th>ProductImage</th>
+        <th>ProductQuantity</th>
+        <th>ProductPrice</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach (var item in Model)
+      {
+      <tr>
+        <td>@item.ProductName</td>
+        <td>
+          <img src='@item.ProductImage' style="max-width:100px; max-height:100px;" />
+        </td>
+        <td>@item.ProductQuantity</td>
+        <td>@item.ProductPrice</td>
+        @*<td>
+          @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }) |
+          @Html.ActionLink("Details", "Details", new { id = item.ProductId }) |
+          @Html.ActionLink("Delete", "Delete", new { id = item.ProductId })
+        </td>*@
+      </tr>
+
+      }
+    </tbody>
+  </table>
